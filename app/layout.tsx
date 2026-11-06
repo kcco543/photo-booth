@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { fontVariables } from "./lib/fonts";
 
 export const metadata: Metadata = {
   title: "Photo Booth",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "Photo Booth",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
   icons: {
     icon: [
@@ -27,13 +28,13 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: "cover",
-  themeColor: "#000000",
-  colorScheme: "dark",
+  themeColor: "#F6DCEB",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fontVariables}>
       <body>{children}</body>
     </html>
   );
